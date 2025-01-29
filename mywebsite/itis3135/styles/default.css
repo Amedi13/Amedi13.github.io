@@ -1,0 +1,85 @@
+/* General Styling */
+body {
+    background-color: rgb(3, 51, 95);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header Styling */
+header {
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: white;
+    text-align: center;
+}
+
+/* Image Styling */
+img {
+    display: block;
+    margin: 10px auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Paragraph and List Styling */
+p {
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    color: white;
+    margin: 5px 0;
+}
+
+/* Navigation Styling */
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: rgb(124, 124, 4);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    p {
+        max-width: 90%;
+    }
+    
+    img {
+        width: 120px;
+        height: 120px;
+    }
+}
