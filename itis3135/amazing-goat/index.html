@@ -3,19 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazing Magnificient Goated Glasses</title>
-    <link rel="stlyesheet" href="">
+    <title>Amazing Magnificent Goated Glasses</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <h1>Amazing Magnificient Goated Glasses</h1>
-<section>
-    <h2>About our product</h2>
-    <p>Our revolutionary glasses are made with the person using the glasses in mind.
-        <ul>
-            <li>Unbreakable glass</li>
-        </ul>
-    </p>
-</section>
-    
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <img src="data:image/png;base64,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" alt="Glasses Logo">
+        <h1>Amazing Magnificent Goated Glasses</h1>
+        <p><em>See the world, unbreakable</em></p>
+        <a href="#" class="btn">Shop Now</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We prioritize your needs, actively listening to feedback to craft eyewear that truly enhances your experience. Every pair of our glasses is designed with both functionality and fashion in mind, ensuring a perfect balance between durability and elegance.</p>
+        <p>Made with unbreakable glass, our frames offer superior resilience, giving you peace of mind in any situation. Whether you're at work, on the go, or enjoying an adventure, our eyewear is built to last without compromising on comfort or style.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Page Built by Asael Medina Galvan &copy; 2025</p>
+    </footer>
+
 </body>
 </html>
