@@ -4,22 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medina Ebterpises ~ Home</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0 auto; 
+        }
+        body
+        {
+            background-color: azure;
+        }
+        .nav-bar ul {
+            background-color: rgb(12, 41, 41);
+            width: 100%;
+            list-style: none;
+            z-index: 1000;
+            position: fixed;
+            position: fixed;
+            top: 0;
+            left: 0;
+            text-decoration: none;
+            
+        }
+        a {
+            color: azure;
+            text-decoration: none;
+        }
+        a:hover {
+            color: teal; 
+        }
+        h1 {
+            text-align: center;
+            margin-top: 15px; 
+            color: rgb(6, 186, 186);
+        }
+        h2 {
+            text-align: center;
+            color: rgb(6, 186, 186);
+            
+        }
+
+        .container {
+            width: 80%;
+            height: 100%;
+        }
+
+       #conpany-desciption {
+        font-size: 20px;
+        font-family: sans-serif;
+        color: rgb(13, 57, 53);
+        margin-top: 100px;
+       }
+
+       .card {
+        background-color: rgb(138, 168, 168);
+        border-radius: 10px;
+        width: 50%; 
+        margin-top: 50px;
+        height: 200px;
+       }
+
+       #list li {
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: rgb(5, 50, 50); 
+        font-family: sans-serif;
+       }
+
+       #closing {
+        text-align: center;
+        margin-top: 190px;
+       }
+
+       footer{
+        margin-top: 70px;
+        text-align: center;
+       }
+
+    
+    </style>
 </head>
 <body>
-    <h1>Welcom to Medina Enterprises</h1>
-    <!---NAV-->
 
+     <!---NAV-->
+     <div class="nav-bar">
+        <ul>
+            <li> <a href="#home">Home</a></li>
+            <li> <a href="#About">About Us</a></li>
+            <li> <a href="#Shop">shop</a></li>
+        </ul>
+     </div>
+    
+    <h1>Welcom to Medina Enterprises</h1>
 
     <!--Main-->
     <main>
         <h2>Medina Enterpises Sercives</h2>
         
-        <section>
-            <p>Here at Medina Enterprises we ensure our customers get the best parts for the cars. All of our parts are made with premium material which will last you a life and will have no need to replace any time soon.</p>
+        <section class="container">
+            <p id="conpany-desciption">Here at Medina Enterprises we ensure our customers get the best parts for the cars. All of our parts are made with premium material which will last you a life and will have no need to replace any time soon.</p>
         </section>
        
-       <section>
-        <ul>
+       <section class="card">
+        <ul id="list">
             <li>Manufacturered from Japan</li>
             <li>Made with real steel</li>
             <li>Shipped to you within 1-2 business days</li>
@@ -28,11 +114,17 @@
         </ul>
        </section>
 
-       <section>
+       <section id="closing">
         <p> To speak with an agent call (330)-342-1232</p>
         <p> To contact one our representives please email us at medinasupport@gmail.com</p>
        </section>
     </main>
+
+
+    <!---Footer-->
+    <footer>
+        <p> &copy Medin Enterpris Services 2025</p>
+    </footer>
     
 </body>
 </html>
