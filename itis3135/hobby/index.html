@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobby Homepage</title>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <!--Emebeded style sheet-->
+    <style>
+    h1 {
+
+        margin-left: 100px; 
+
+    }
+
+    body {
+        background-color: rgb(212, 223, 223);
+    }
+    .sidebar {
+        width: 100vh;
+        background-color: rgb(2, 97, 221); 
+        padding: 20px; 
+        box-sizing: border-box;
+        color: white; 
+        
+        transition: width 0.3s ease-in-out;
+        position: fixed; /* Keeps it in place */
+        top: 0;
+        left: 0;
+    }
+
+    .sidebar:hover {
+        width: 200px; /* Expands on hover */
+    }
+
+    .sidebar nav {
+        display: flex;
+        gap: 15px;
+    }
+
+    .sidebar nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        white-space: nowrap; 
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .sidebar:hover nav a {
+        opacity: 1; 
+    }
+
+    main{
+        margin-left: 100px;
+    }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Reading</h1>
+    </header>
+    
+    <div class="container">
+        <div class="sidebar">
+            <nav>
+                <a href="#about-me">About me</a>
+                <a href="#home">Home</a>
+                <a href="#gneres">Genre</a>
+                <a href="#time">Time to Read</a>
+                <a href="#places">Places to read</a>
+                <a href="#habit">Habit</a>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+
+        <section id="about-me"> 
+            <h2>About Me</h2>
+            <p>I was not much of a reader in my early years, In fact I despised reading and hated pick up a book. It wasnt until my senior year of highschool where out of no where I deecided to pick up a book and just read. Ever since then I enjoyed reading books.</p>
+            <p>In the future I would like to have me personal library</p>
+            <figure>
+                <!--TODO upload an image-->
+                <img alt="my book collection" src="#img">
+                <figcaption><i>My Collection of Books</i></figcaption>
+            </figure>
+        </section>
+
+        <section id="home">
+            <h2>Reading</h2>
+            <p> The reason I decided to pick up reading was to improve my vocabulary. The english language is my second language. I am a native spanish speaker so I had difficulties picking up the language and pronouncing words.</p>
+            <p>I realized that I need to imrpove my english and vocabulary if I wanted to become an effective communicator in the tech wolrd</p>
+            <figure>
+                <!--TODO upload image-->
+                <img alt="first book" src="#img">
+                <figcaption><i>My first book in my collection</i></figcaption>
+            </figure>
+        </section>
+
+        <section id="genres">
+            <h2>Favorite Genres</h2>
+            <p>I love to ready a variety of genres! Here my top favorite</p>
+            <ul>
+                <li>history</li>
+                <li>Philosophy</li>
+                <li>Physics</li>
+                <li>Manga</li>
+            </ul>
+            <figure>
+                <img alt="favorite books" src="#img">
+                <figcaption><i>My favorite books per genre</i></figcaption>
+            </figure>
+        </section>
+
+        <section id="time">
+            <h2>Favorite time to read</h2>
+            <p>The best times I enoy reading are usually early in the morning or evening. I tried reading at nights but I normally too tired to focus on what im reading</p>
+            <table>
+                <tr>
+                  <th>Mornings</th>
+                  <th>Evenings</th>
+                  <th>At Night</th>
+                </tr>
+                <tr>
+                  <td>Yes</td>
+                  <td>somewhat</td>
+                  <td>No</td>
+                </tr>
+              </table>
+              <p>If I had to pick one, I would choose early mornings always</p>
+        </section>
+
+        <section id="places">
+            <h2>Favorite PLace to read</h2>
+            <p>I have a few favorite places where I like to sit down and read</p>
+            <table>
+                <tr>
+                  <th>Home</th>
+                  <th>Library</th>
+                  <th>Outside</th>
+                </tr>
+                <tr>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="habit">
+            <h2>Build reading habit</h2>
+            <p>To buld a reading habbit, you'll have to remain consistent just like any other habit. </p>
+            <p>One must really try to enjoy the book youre reading dont read to just say you you read a book. It takes the fun out of it</p>
+        </section>
+
+
+    </main>
+</body>
+</html>

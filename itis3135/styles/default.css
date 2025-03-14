@@ -50,6 +50,18 @@ li {
     color: white;
     margin: 5px 0;
 }
+main a {
+    color:rgb(189, 189, 19); 
+    margin-top: 10px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+main a:hover {
+    color: rgb(255, 255, 255); 
+}
 
 /* Navigation Styling */
 nav {
