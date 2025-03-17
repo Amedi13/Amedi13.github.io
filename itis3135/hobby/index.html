@@ -4,9 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hobby Homepage</title>
+    <link rel="icon" type="image/jpg" href="images/fav_icon.jpg">
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll("section").forEach((section) => {
+                section.style.display = "none";
+            });
+    
+            // Show the selected section
+            document.getElementById(sectionId).style.display = "block";
+    
+            // Remove active
+            document.querySelectorAll("nav a").forEach((link) => {
+                link.classList.remove("active");
+            });
+    
+            // Add active 
+            document.querySelector(`a[href="#${sectionId}"]`).classList.add("active");
+        }
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            const readingGoalForm = document.querySelector("#reading-goal-form");
+    
+            if (readingGoalForm) {
+                readingGoalForm.addEventListener("submit", function (event) {
+                    event.preventDefault(); // stops the darn page reload
+    
+                    let goal = document.getElementById("reading-goal").value;
+                    let messageElement = document.getElementById("goalMessage");
+    
+                    if (goal) {
+                        messageElement.textContent = `Your reading goal of ${goal} books has been saved!`;
+                        messageElement.style.display = "block";
+                    } else {
+                        messageElement.textContent = "Please enter a valid reading goal.";
+                        messageElement.style.color = "red";
+                    }
+                });
+            }
+        });
+    
+        function showSelectedGenre() {
+            let selectedGenre = document.querySelector('input[name="fav_genre"]:checked');
+            let output = selectedGenre ? selectedGenre.value : "No genre selected";
+            document.getElementById('genreOutput').innerText = "You selected: " + output;
+        }
+    </script>    
+    
     <!--Emebeded style sheet-->
     <style>
+
+     /*Import google font*/
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
     h1 {
 
         margin-left: 100px; 
@@ -14,45 +66,152 @@
     }
 
     body {
-        background-color: rgb(212, 223, 223);
+        background: linear-gradient(to right, #eef2f3, #8e9eab);
+        color: #222;
+        font-family: 'Poppins', sans-serif;
     }
     .sidebar {
-        width: 100vh;
-        background-color: rgb(2, 97, 221); 
+        width: 100%;
+        background-color: rgb(6, 6, 60); 
         padding: 20px; 
         box-sizing: border-box;
         color: white; 
-        
-        transition: width 0.3s ease-in-out;
-        position: fixed; /* Keeps it in place */
+        position: fixed;
         top: 0;
         left: 0;
-    }
-
-    .sidebar:hover {
-        width: 200px; /* Expands on hover */
     }
 
     .sidebar nav {
         display: flex;
         gap: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
     }
 
     .sidebar nav a {
         color: white;
         text-decoration: none;
         font-size: 18px;
-        white-space: nowrap; 
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
+        margin: 15px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: 0.3s;
     }
 
-    .sidebar:hover nav a {
-        opacity: 1; 
+    .sidebar nav a:hover {
+        background: #575789;
+        color: #f4f4f4;
     }
 
-    main{
-        margin-left: 100px;
+    .active {
+        background: #575789;
+        color: #f4f4f4;
+        font-weight: bold;
+    }
+
+
+
+   h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    color: #1f1f38;
+    border-bottom: 3px solid #575789;
+    display: inline-block;
+    padding-bottom: 5px;
+   }
+
+   p {
+    font-family: 'Roboto', sans-serif;
+    color: rgb(6, 6, 60);
+   }
+
+   ul li {
+    font-family: 'Roboto', sans-serif;
+    color: rgb(6, 6, 60);
+   }
+
+   section {
+    display: none;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    section:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /*Defualt page*/
+    #home {
+        display: block;
+    }
+
+    img {
+        max-width: 80%;
+        height: auto;
+        display: block;
+        margin: 15px auto;
+        max-height: 250px;
+        border-radius: 8px;
+    }
+
+    table {
+            width: 60%;
+            margin: 20px auto; 
+            border-collapse: collapse; 
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+    th, td {
+        padding: 12px; 
+        text-align: center; 
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: rgb(58, 96, 220); 
+        color: white; 
+        font-size: 18px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+        transition: 0.3s;
+    }
+
+    figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; 
+        margin: 20px auto; 
+        max-width: 90%; 
+    }
+
+    figure img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    figcaption {
+        margin-top: 8px; 
+        font-size: 14px;
+        color: #444;
+        font-style: italic;
+        max-width: 80%;
     }
 
 
@@ -67,12 +226,13 @@
     <div class="container">
         <div class="sidebar">
             <nav>
-                <a href="#about-me">About me</a>
-                <a href="#home">Home</a>
-                <a href="#gneres">Genre</a>
-                <a href="#time">Time to Read</a>
-                <a href="#places">Places to read</a>
-                <a href="#habit">Habit</a>
+                <a href="#about-me" onclick="showSection('about-me')">About Me 🟊</a>
+                <a href="#home" onclick="showSection('home')">Reading 📖</a>
+                <a href="#genres" onclick="showSection('genres')">Genres ✨</a>
+                <a href="#time" onclick="showSection('time')">Best Times ⏳</a>
+                <a href="#places" onclick="showSection('places')">Best Locations 📍</a>
+                <a href="#habit" onclick="showSection('habit')">Habit 📚</a>
+                <a href="#ai-prompts" onclick="showSection('ai-prompts')">AI Prompts 🤖</a>
             </nav>
         </div>
     </div>
@@ -81,81 +241,180 @@
 
         <section id="about-me"> 
             <h2>About Me</h2>
-            <p>I was not much of a reader in my early years, In fact I despised reading and hated pick up a book. It wasnt until my senior year of highschool where out of no where I deecided to pick up a book and just read. Ever since then I enjoyed reading books.</p>
-            <p>In the future I would like to have me personal library</p>
+            <p>As a child, I never found books interesting. In fact, I would do anything to avoid reading. However, that changed during my senior year of high school. One day, out of curiosity, I picked up a book and started reading. That moment changed everything.</p>
+
+            <p>The first book that truly captivated me was *The Alchemist* by Paulo Coelho. Its themes of self-discovery and adventure spoke to me in ways I never expected. After finishing it, I realized that reading could be more than just words on a page—it could be a journey.</p>
+
+            <p>Today, reading is a big part of my life. I set reading goals each year and challenge myself to explore new genres. My ultimate dream is to build my own personal library filled with books that have shaped my perspective.</p>
+
             <figure>
-                <!--TODO upload an image-->
-                <img alt="my book collection" src="#img">
+                <img alt="My book collection" src="images/book_collection.jpg">
                 <figcaption><i>My Collection of Books</i></figcaption>
             </figure>
         </section>
+        
 
         <section id="home">
             <h2>Reading</h2>
-            <p> The reason I decided to pick up reading was to improve my vocabulary. The english language is my second language. I am a native spanish speaker so I had difficulties picking up the language and pronouncing words.</p>
-            <p>I realized that I need to imrpove my english and vocabulary if I wanted to become an effective communicator in the tech wolrd</p>
+            <p>My main motivation for reading was to improve my vocabulary. As a native Spanish speaker, I often struggled with certain English words and expressions. Reading books helped me expand my vocabulary, understand grammar better, and improve my overall communication skills.</p>
+
+            <p>Beyond that, reading has also helped me develop critical thinking. Books teach you how to see the world from different perspectives. Whether it’s philosophy, science, or history, every book I read adds something valuable to my knowledge.</p>
+
+            <p>These days, I enjoy both physical books and e-books. Physical books feel more personal, but e-books are more convenient when I’m traveling.</p>
+
+            <p>One of my favorite quotes is from *Meditations* by Marcus Aurelius: <i>"You have power over your mind—not outside events. Realize this, and you will find strength."</i> This quote has stayed with me, reminding me to focus on what I can control in life.</p>
+
+        
             <figure>
-                <!--TODO upload image-->
-                <img alt="first book" src="#img">
+                <img alt="First book I read" src="images/fav_book.jpg">
                 <figcaption><i>My first book in my collection</i></figcaption>
             </figure>
         </section>
-
+        
         <section id="genres">
             <h2>Favorite Genres</h2>
-            <p>I love to ready a variety of genres! Here my top favorite</p>
+            <p>I love to read a variety of genres! Here are my top favorites:</p>
             <ul>
-                <li>history</li>
-                <li>Philosophy</li>
-                <li>Physics</li>
-                <li>Manga</li>
+                <li><b>History:</b> *Sapiens: A Brief History of Humankind* by Yuval Noah Harari</li>
+                <li><b>Philosophy:</b> *Meditations* by Marcus Aurelius</li>
+                <li><b>Physics:</b> *A Brief History of Time* by Stephen Hawking</li>
+                <li><b>Manga:</b> *One Piece* by Echiro Oda</li>
             </ul>
+            
+            <p>These books are my top recommendations. *Sapiens* changed the way I see human history, *Meditations* helped me develop a stronger mindset.</p>
+            
+            <p>If you have any book recommendations, feel free to share them with me!</p>
+        
             <figure>
-                <img alt="favorite books" src="#img">
-                <figcaption><i>My favorite books per genre</i></figcaption>
+                <img alt="Favorite books by genre" src="images/fav_generes.jpg">
+                <figcaption><i>AI generated picutre of my favorite books</i></figcaption>
             </figure>
+        
+            <p>Choose your favorite genre below:</p>
+            <p>If your favorite genre is not listed as an option, feel free to type it below:</p>
+        
+            <form>
+                <label for="history">
+                    <input type="radio" id="history" name="fav_genre" value="History"> History
+                </label><br>
+            
+                <label for="philosophy">
+                    <input type="radio" id="philosophy" name="fav_genre" value="Philosophy"> Philosophy
+                </label><br>
+            
+                <label for="physics">
+                    <input type="radio" id="physics" name="fav_genre" value="Physics"> Physics
+                </label><br>
+            
+                <label for="manga">
+                    <input type="radio" id="manga" name="fav_genre" value="Manga"> Manga
+                </label><br>
+                <hr>
+                <label for="other_genre">
+                    Other:
+                    <input type="text" id="other_genre" name="other_genre" placeholder="Type here">
+                </label>
+            </form>
+            
         </section>
+        
 
         <section id="time">
-            <h2>Favorite time to read</h2>
-            <p>The best times I enoy reading are usually early in the morning or evening. I tried reading at nights but I normally too tired to focus on what im reading</p>
+            <h2>Favorite Time to Read</h2>
+            <p>I find that reading in the morning helps me start my day with a calm and focused mindset. It’s a great way to wake up without immediately looking at my phone.</p>
+
+            <p>Some of my favorite morning reading rituals include:</p>
+            <ul>
+                <li>☕ Enjoying a coffee while reading.</li>
+                <li>🌅 Sitting by a window and letting natural sunlight in.</li>
+                <li>📝 Taking notes on interesting ideas or quotes.</li>
+            </ul>
+            <img alt="favorite time to read is the morning" src="images/fav_time.jpg">
+
             <table>
                 <tr>
-                  <th>Mornings</th>
-                  <th>Evenings</th>
-                  <th>At Night</th>
+                    <th>Mornings</th>
+                    <th>Evenings</th>
+                    <th>At Night</th>
                 </tr>
                 <tr>
-                  <td>Yes</td>
-                  <td>somewhat</td>
-                  <td>No</td>
+                    <td>✅ Yes</td>
+                    <td>🤔 Somewhat</td>
+                    <td>❌ No! Very Exhuasted by then</td>
                 </tr>
-              </table>
-              <p>If I had to pick one, I would choose early mornings always</p>
+            </table>
+        
+            <p>If I had to choose one, I would always pick early mornings.</p>
         </section>
+        
 
         <section id="places">
-            <h2>Favorite PLace to read</h2>
-            <p>I have a few favorite places where I like to sit down and read</p>
+            <h2>Favorite Places to Read</h2>
+            <p>Where I read depends on my mood:</p>
+            <ul>
+                <li>🏡 <b>At Home:</b> I have a cozy reading corner with a soft blanket.</li>
+                <li>📚 <b>At the Library:</b> It’s the best place when I want complete focus, surrounded by books and silence.</li>
+                <li>🌳 <b>Outside:</b> Sometimes I go to a bench on campus. The fresh air makes the experience even better.</li>
+            </ul>
+
+            <img alt="favorite place to read is the library" src="images/fav_place.jpg">
+        
             <table>
                 <tr>
-                  <th>Home</th>
-                  <th>Library</th>
-                  <th>Outside</th>
+                    <th>🏡 Home</th>
+                    <th>📚 Library</th>
+                    <th>🌳 Outside</th>
                 </tr>
                 <tr>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
+                    <td>✅ Yes, it's cozy</td>
+                    <td>✅ Best for focus</td>
+                    <td>✅ Relaxing in nature</td>
                 </tr>
             </table>
         </section>
+        
 
         <section id="habit">
-            <h2>Build reading habit</h2>
-            <p>To buld a reading habbit, you'll have to remain consistent just like any other habit. </p>
-            <p>One must really try to enjoy the book youre reading dont read to just say you you read a book. It takes the fun out of it</p>
+            <h2>How to Build a Reading Habit</h2>
+            <p>To build a reading habit, you need to remain consistent, just like with any other habit. Start small and gradually make reading a part of your daily routine.</p>
+        
+            <p>You should truly enjoy the book you’re reading. Don’t read just to say you finished a book—it takes the fun out of it. Choose books that genuinely interest you and fit your preferences.</p>
+        
+            <h3>📌 How to build a reading habit: </h3>
+            <ul>
+                <li>📖 Set a daily reading goal.</li>
+                <li>📅 Schedule a specific time for reading (morning, lunch break, before bed).</li>
+                <li>🎧 Try audiobooks if you’re short on time.</li>
+                <li>📚 Keep a book with you at all times.</li>
+                <li>📝 Track your reading progress using a journal or app. (I use notions and I recommend it)</li>
+                <li>🛑 Avoid distractions (turn off notifications while reading).</li>
+            </ul>
+        
+            <h3>🎯 Set Your Own Reading Goal:</h3>
+            <p>How many books do you want to read this month?</p>
+        
+            <form id="reading-goal-form">
+                <label for="reading-goal">Enter your reading goal:</label>
+                <input type="number" id="reading-goal" name="reading-goal" min="1" max="50" placeholder="E.g., 5">
+                <button type="submit">Submit</button>
+            </form>
+            <p id="goalMessage" style="color: green;"></p> <!-- Success message display -->
         </section>
+        
+        <section id="ai-prompts">
+            <h2>AI Prompts</h2>
+            <p>Below are the AI-generated prompts used for images:</p>
+            
+            <ul>
+                <li>About Me Image: "A cozy reading nook with a young person sitting comfortably in a chair, surrounded by bookshelves filled with various books. The person is reading a book with a warm, focused expression. A cup of tea or coffee sits on a small wooden table nearby, and soft lighting from a lamp creates a peaceful atmosphere. The background features a window with a view of a quiet, starry night."</li>
+                <li>Reading Section Image: "A young person deeply engaged in reading a book at a desk, surrounded by stacks of books. A soft desk lamp illuminates the pages, creating a warm and focused atmosphere. The background features a bookshelf filled with novels and educational books, emphasizing a passion for reading and learning."</li>
+                <li>Meditations by Marcus Aurelius Image: "A realistic digital painting of the book 'Meditations' by Marcus Aurelius placed on an elegant wooden table. The book has an antique leather cover with gold embossed lettering. A warm candlelight glow reflects off the cover, and a cup of tea rests beside it. In the background, a classic bookshelf filled with philosophy books adds depth to the serene atmosphere."</li>
+                <li>Favorite Genres Image: "A collection of books representing different genres: History, Philosophy, Physics, and Manga. The books are arranged neatly on a wooden bookshelf. The History book has an aged leather cover with gold lettering, the Philosophy book has a deep blue cover with intricate designs, the Physics book features a sleek modern cover with scientific symbols, and the Manga book has a colorful and vibrant cover with anime-style artwork. The background is a cozy study with soft lighting."</li>
+                <li>Favorite Time to Read Image: "A peaceful morning reading scene with a book open on a wooden table next to a steaming cup of coffee. Soft sunlight streams through a nearby window, casting a warm glow. In the background, a cozy armchair with a blanket draped over it sits next to a bookshelf filled with books. The atmosphere is calm and inviting, perfect for early morning reading."</li>
+                <li>Favorite Place to Read (Library) Image: "A cozy reading spot inside a grand library with towering bookshelves filled with books. A comfortable reading chair is placed near a large wooden table with an open book and a cup of coffee. Soft warm lighting from elegant chandeliers creates a peaceful and inviting atmosphere. Large arched windows allow natural light to filter in, adding to the tranquil ambiance."</li>
+            </ul>
+        </section>
+        
 
 
     </main>
