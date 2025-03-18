@@ -23,6 +23,8 @@
     
             // Add active 
             document.querySelector(`a[href="#${sectionId}"]`).classList.add("active");
+
+            window.scrollTo(0, 0); // force scroll to top of the page
         }
     
         document.addEventListener("DOMContentLoaded", function () {
@@ -51,6 +53,18 @@
             let output = selectedGenre ? selectedGenre.value : "No genre selected";
             document.getElementById('genreOutput').innerText = "You selected: " + output;
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("genre-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevents page reload
+
+            let otherGenre = document.getElementById("other_genre").value.trim();
+
+            if (otherGenre !== "") {
+                alert(`Your custom genre "${otherGenre}" has been submitted! 🎉`);
+            }
+        });
+    });
     </script>    
     
     <!--Emebeded style sheet-->
@@ -81,29 +95,29 @@
         left: 0;
     }
 
-    .sidebar nav {
-        display: flex;
-        gap: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 45px;
-    }
-
     .sidebar nav a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        margin: 15px;
-        padding: 10px 15px;
-        border-radius: 5px;
-        transition: 0.3s;
-    }
+    display: inline-flex; 
+    align-items: center; 
+    gap: 5px; 
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+    white-space: nowrap; 
+}
 
     .sidebar nav a:hover {
         background: #575789;
         color: #f4f4f4;
     }
+
+    .sidebar nav a .icon {
+        font-size: 20px;
+    }
+
 
     .active {
         background: #575789;
@@ -214,6 +228,35 @@
         max-width: 80%;
     }
 
+    .submit-btn {
+        background-color: #575789;
+        color: white;
+        font-size: 16px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+        background-color: #44466e;
+    }
+
+    footer p {
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer p a {
+        color: navy; 
+        text-decoration: none;
+    }
+
+    footer p a:hover {
+        color: rgb(85, 52, 230);
+    }
 
     </style>
 </head>
@@ -221,21 +264,22 @@
 
     <header>
         <h1>Reading</h1>
+
+        <div class="container">
+            <div class="sidebar">
+                <nav>
+                    <a href="#about-me" onclick="showSection('about-me')">About Me 🟊</a>
+                    <a href="#home" onclick="showSection('home')">Reading 📖</a>
+                    <a href="#genres" onclick="showSection('genres')">Genres ✨</a>
+                    <a href="#time" onclick="showSection('time')">Best Times ⏳</a>
+                    <a href="#places" onclick="showSection('places')">Best Locations 📍</a>
+                    <a href="#habit" onclick="showSection('habit')">Habit 📚</a>
+                    <a href="#ai-prompts" onclick="showSection('ai-prompts')">AI Prompts 🤖</a>
+                </nav>
+            </div>
+        </div>
     </header>
     
-    <div class="container">
-        <div class="sidebar">
-            <nav>
-                <a href="#about-me" onclick="showSection('about-me')">About Me 🟊</a>
-                <a href="#home" onclick="showSection('home')">Reading 📖</a>
-                <a href="#genres" onclick="showSection('genres')">Genres ✨</a>
-                <a href="#time" onclick="showSection('time')">Best Times ⏳</a>
-                <a href="#places" onclick="showSection('places')">Best Locations 📍</a>
-                <a href="#habit" onclick="showSection('habit')">Habit 📚</a>
-                <a href="#ai-prompts" onclick="showSection('ai-prompts')">AI Prompts 🤖</a>
-            </nav>
-        </div>
-    </div>
 
     <main>
 
@@ -249,7 +293,7 @@
 
             <figure>
                 <img alt="My book collection" src="images/book_collection.jpg">
-                <figcaption><i>My Collection of Books</i></figcaption>
+                <figcaption><i>Ai generated picutre of "me" reading</i></figcaption>
             </figure>
         </section>
         
@@ -293,28 +337,35 @@
             <p>Choose your favorite genre below:</p>
             <p>If your favorite genre is not listed as an option, feel free to type it below:</p>
         
-            <form>
-                <label for="history">
-                    <input type="radio" id="history" name="fav_genre" value="History"> History
-                </label><br>
+            <form id="genre-form">
+                <fieldset>
+                    <legend>Select Your Favorite Genre</legend>
             
-                <label for="philosophy">
-                    <input type="radio" id="philosophy" name="fav_genre" value="Philosophy"> Philosophy
-                </label><br>
+                    <label>
+                        <input type="radio" name="fav_genre" value="History"> History
+                    </label>
             
-                <label for="physics">
-                    <input type="radio" id="physics" name="fav_genre" value="Physics"> Physics
-                </label><br>
+                    <label>
+                        <input type="radio" name="fav_genre" value="Philosophy"> Philosophy
+                    </label>
             
-                <label for="manga">
-                    <input type="radio" id="manga" name="fav_genre" value="Manga"> Manga
-                </label><br>
-                <hr>
-                <label for="other_genre">
-                    Other:
+                    <label>
+                        <input type="radio" name="fav_genre" value="Physics"> Physics
+                    </label>
+            
+                    <label>
+                        <input type="radio" name="fav_genre" value="Manga"> Manga
+                    </label>
+            
+                    <label>
+                        <input type="radio" name="fav_genre" value="Other" id="other_option"> Other:
+                    </label>
+                    
                     <input type="text" id="other_genre" name="other_genre" placeholder="Type here">
-                </label>
+                    <button type="submit">Submit</button>
+                </fieldset>
             </form>
+            
             
         </section>
         
@@ -329,7 +380,11 @@
                 <li>🌅 Sitting by a window and letting natural sunlight in.</li>
                 <li>📝 Taking notes on interesting ideas or quotes.</li>
             </ul>
-            <img alt="favorite time to read is the morning" src="images/fav_time.jpg">
+
+            <figure>
+                <img alt="favorite time to read is the morning" src="images/fav_time.jpg">
+                <figcaption><i>I love reading in the morning</i></figcaption>
+            </figure>
 
             <table>
                 <tr>
@@ -404,6 +459,7 @@
         <section id="ai-prompts">
             <h2>AI Prompts</h2>
             <p>Below are the AI-generated prompts used for images:</p>
+            <p><i>All AI-generated images in this project were created using OpenAI's ChatGPT model.</i></p>
             
             <ul>
                 <li>About Me Image: "A cozy reading nook with a young person sitting comfortably in a chair, surrounded by bookshelves filled with various books. The person is reading a book with a warm, focused expression. A cup of tea or coffee sits on a small wooden table nearby, and soft lighting from a lamp creates a peaceful atmosphere. The background features a window with a view of a quiet, starry night."</li>
@@ -414,9 +470,10 @@
                 <li>Favorite Place to Read (Library) Image: "A cozy reading spot inside a grand library with towering bookshelves filled with books. A comfortable reading chair is placed near a large wooden table with an open book and a cup of coffee. Soft warm lighting from elegant chandeliers creates a peaceful and inviting atmosphere. Large arched windows allow natural light to filter in, adding to the tranquil ambiance."</li>
             </ul>
         </section>
-        
-
-
     </main>
+
+    <footer>
+        <p>Designed by  <a href="../medinaenterprises/index.html"> &copy; Medina Enterprises 2025</a></p>
+    </footer>
 </body>
 </html>
