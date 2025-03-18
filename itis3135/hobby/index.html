@@ -24,7 +24,11 @@
             // Add active 
             document.querySelector(`a[href="#${sectionId}"]`).classList.add("active");
 
-            window.scrollTo(0, 0); // force scroll to top of the page
+
+            // this piece of code got rid of the page loading to the middle not the top
+            setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 50); // force scroll to top of the page
         }
     
         document.addEventListener("DOMContentLoaded", function () {
@@ -263,7 +267,6 @@
 <body>
 
     <header>
-        <h1>Reading</h1>
 
         <div class="container">
             <div class="sidebar">
@@ -271,13 +274,15 @@
                     <a href="#about-me" onclick="showSection('about-me')">About Me 🟊</a>
                     <a href="#home" onclick="showSection('home')">Reading 📖</a>
                     <a href="#genres" onclick="showSection('genres')">Genres ✨</a>
-                    <a href="#time" onclick="showSection('time')">Best Times ⏳</a>
-                    <a href="#places" onclick="showSection('places')">Best Locations 📍</a>
+                    <a href="#time" onclick="showSection('time')">Times to read ⏳</a>
+                    <a href="#places" onclick="showSection('places')">Places to read 📍</a>
                     <a href="#habit" onclick="showSection('habit')">Habit 📚</a>
                     <a href="#ai-prompts" onclick="showSection('ai-prompts')">AI Prompts 🤖</a>
                 </nav>
             </div>
         </div>
+
+        <h1>Reading</h1>
     </header>
     
 
