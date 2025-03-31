@@ -3,9 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Build Your own Introduction form</title>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/byo_styles.css">
+    <script src="scripts/survey.js"></script>
 </head>
 <body>
-    
+    <header>
+        <h1>Build your own Introduction Form</h1>
+        <nav></nav>
+    </header>
+
+    <main>
+        <h2>Introduction Form</h2>
+
+        <h3>It's time to build your own introduction.</h3>
+
+        <form id="intro-form" onsubmit="return submitHandling(event)">
+            <div class="form-container">
+                <label for="first-name">First Name:</label>
+                <input id="first-name" type="text" name="first-name">
+
+                <label for="last-name">Last Name:</label>
+                <input id="last-name" type="text" name="last-name">
+
+                <label for="mascot">Mascot:</label>
+                <input id="mascot" type="text" name="mascot">
+
+                <label for="image">Image</label>
+                <input type="file" id="image" name="image"> 
+
+                <label for="image-caption">Image Caption</label>
+                <input id="image-caption" type="text" name="image-caption">
+
+                <label for="personal-background">Personal Background</label>
+                <input id="personal-background" type="text" name="personal-background">
+
+                <label for="professional-background">Professional Background</label>
+                <input id="professional-background" type="text" name="professional-background">
+
+                <label for="academic-background">Academic Background</label>
+                <input id="academic-background" type="text" name="academic-background">
+
+                <label for="background-webdev">Background in Web Development</label>
+                <input id="background-webdev" type="text" name="background-webdev">
+
+                <label for="computer-platform">Primary Computer Platform</label>
+                <input id="computer-platform" type="text" name="computer-platform">
+
+                <div id="courses-container">
+                    <label>Courses currently taking</label>
+                    <button type="button" onclick="addCourse()">Add Course</button>
+                </div>
+
+                <label for="funny-thing">Funny Thing</label>
+                <input id="funny-thing" type="text" name="funny-thing">
+
+                <label for="anything-else">Anything else</label>
+                <input id="anything-else" type="text" name="anything-else">
+
+                <label for="agreement">I understand that what is on this page is not password protected and I will not put anything here that I don’t want publicly available.</label>
+                <input id="agreement" type="checkbox" name="agreement">
+
+                <!-- Submit and reset buttons -->
+                <div class="submit-form">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </div>
+            </div>
+        </form>
+
+        <!-- Output -->
+        <div id="output"></div>
+    </main>
+
+    <footer>
+        <div data-include="components/footer.html"> </div>
+    </footer>
+    <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
