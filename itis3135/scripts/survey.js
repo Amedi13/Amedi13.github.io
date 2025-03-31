@@ -13,7 +13,6 @@ function submitHandling(event) {
         const input = document.getElementById(id);
         if (input.value.trim() === "") {
             alert(`Please fill out the "${id.replace('-', ' ')}" field.`);
-            input.focus();
             return false;
         }
     }
@@ -74,14 +73,17 @@ function submitHandling(event) {
 function addCourse() {
     const coursesContainer = document.getElementById("courses-container");
 
+
     const div = document.createElement("div");
     div.className = "course-entry";
 
+    // creating elements for new courses 
     const input = document.createElement("input");
     input.type = "text";
     input.name = "courses[]";
     input.placeholder = "Enter a course";
 
+    // creating a delete buttone element
     const deleteBtn = document.createElement("button");
     deleteBtn.type = "button";
     deleteBtn.textContent = "Delete";

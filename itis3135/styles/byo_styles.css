@@ -48,7 +48,7 @@ button {
     width: 100%;
 }
 
-/* Style the Add Course button to be smaller */
+
 #courses-container button {
     width: auto;
     padding: 0.4rem 0.8rem;
@@ -70,7 +70,7 @@ button {
     margin-top: 1rem;
 }
 
-/* Updated submit and reset button styles */
+
 input[type="submit"],
 input[type="reset"] {
     background-color: #007acc;
