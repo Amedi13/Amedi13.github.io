@@ -3,49 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asael Medina-Galvan - Amazing Magnifiect Goat || ITIS-3135 | Home</title>
+    <title>Asael Medina-Galvan - Amazing Magnificent Goat | ITIS-3135 | Home</title>
     <link rel="stylesheet" href="styles/default.css">
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div data-include="components/header.html"></div>
-    <div style="height: 300px; ">
+    <div class="container">
+        <header>
+            <div data-include="components/header.html"></div>
+            <nav>
+                <a href="things/">Crappy Site</a> |
+                <a href="amazing-goat/">Whimsical Company</a> |
+                <a href="hobby/">Hobby</a> |
+                <a href="tables.html">Company Tables</a>
+            </nav>
+        </header>
+
         <main>
-            <h2>Welcome to my ITIS 3135 homepage!</h2>
-            <p>Feel free to look around!</p>
-            <p>This is my ITIS-3135 homepage. Checkout my links below! </p>
-
-           
-            <!-- <p><strong>Person Bakcground:</strong>I am orginally from Winston Salem about 1 hour and 15 mins from charlotte. I grew up there for most of my life.</p>
-
-            
-            <p><strong>Porfessional Background</strong>I done a few internships, my first role as a data analyst, and my current role as a Full stack Developer intern</p>
-
-           
-            <p><strong>Academic Background:</strong>I transfered from Forsyth Techincal Community College where I got my Associates in Science</p>
-
-           
-            <p><strong>Course Background</strong>I have frontend expiernce from personal projects and from internship expierience</p>
-
-           
-            <p><strong>Computer Platform:</strong>I use a windows machine running windows OS</p>
-
-          
-           <strong>Courses Im taking</strong>
-                <ul>
-                    <li>ITSC-2175 Logic and Algorithms</li>
-                    <li>ITSC-3155 Software Engineering</li>
-                    <li>ITSC-2181 Introduction to Computer Systems</li>
-                    <li>ITIS-3135 Web-based Application Development</li>
-                    <li>ITIS-3112 Introduction to Object-Oriented Systems</li>
-                </ul>  -->
+            <div class="intro-card">
+                <h2>Welcome to my ITIS 3135 homepage!</h2>
+                <p>Feel free to look around!</p>
+                <p>This is my ITIS 3135 homepage. Check out my links above!</p>
+            </div>
         </main>
+        
+        <footer>
+            <div data-include="components/footer.html"></div>
+        </footer>
     </div>
-    <!--TODO move outside the div-->
-    <footer>
-       <div data-include="components/footer.html"> </div>
-    </footer>
-    <script src="scripts/HTMLInclude.min.js"></script>
 
+    <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
