@@ -1,16 +1,13 @@
-/* General Body Styling */
+html {
+    box-sizing: border-box;
+}
+
+
 body {
     background-color: rgb(167, 167, 167); 
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-nav.current {
-    display: none;
-    pointer-events: none;
-    color: gray;
-    font-weight: bold;
-    text-decoration: underline;
 }
 
 /* Container Wrapper */
@@ -20,7 +17,7 @@ nav.current {
     padding: 0 20px;
 }
 
-/* Header Styling */
+/* Header */
 header {
     padding: 20px;
     text-align: center;
@@ -31,17 +28,17 @@ h1 {
     text-align: center;
 }
 
-h2, h3 {
-    color: white; 
+h2,
+h3 {
+    color: white;
     text-align: center;
 }
 
-/* Profile/Image Styling */
+/* Image Styling */
 img {
     display: block;
     margin: 10px auto;
-    width: 150px;
-    height: 150px;
+    max-width: 100%;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -51,8 +48,6 @@ main {
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
     min-height: 300px;
 }
 
@@ -63,7 +58,7 @@ p {
     margin: 0 auto;
     line-height: 1.5;
     padding: 10px;
-    text-align: center;
+    
 }
 
 /* Link Styling in Main */
@@ -72,57 +67,6 @@ main a {
     text-decoration: none;
     margin: 10px auto;
     display: inline-block;
-}
-
-/* Specific styling for intro page figure */
-.intro-figure {
-    margin-bottom: 20px;
-}
-
-.intro-figure img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #c8ffb2;
-}
-
-.intro-figure figcaption {
-    color: #c8c8c8;
-    font-style: italic;
-    font-size: 14px;
-    margin-top: 5px;
-    text-align: center;
-}
-
-/* Nested list inside intro */
-ul.nested-list {
-    list-style-type: circle;
-    padding-left: 20px;
-    margin-top: 5px;
-}
-
-/* Intro card override */
-.intro-card {
-    background-color: #011b12;
-    color: white;
-    border-radius: 30px;
-    padding: 30px 30px;
-    text-align: left;
-    max-width: 800px;
-    margin: 40px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease;
-}
-
-.intro-card:hover {
-    transform: translateY(-5px);
-}
-
-.intro-card h2,
-.intro-card h3 {
-    text-align: center;
-    color: #c8ffb2;
 }
 
 main a:hover {
@@ -136,7 +80,7 @@ nav {
 }
 
 nav a {
-    color: #084d08; /* Better contrast green */
+    color: #084d08;
     text-decoration: none;
     margin: 0 10px;
     font-size: 18px;
@@ -145,6 +89,13 @@ nav a {
 
 nav a:hover {
     color: white;
+}
+
+.current {
+    pointer-events: none;
+    color: gray;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 /* Footer Styling */
@@ -159,32 +110,26 @@ footer p {
     color: black;
 }
 
+footer a {
+    color: rgb(3, 70, 3); 
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: rgb(202, 202, 19);
+}
+
 /* Content Card Styling */
 .card {
     background-color: #011b12;
-    width: 500px; 
+    max-width: 500px;
     margin: 20px auto;
     padding: 20px;
     border-radius: 30px;
-    box-sizing: border-box;
-    height: auto;
     color: white;
 }
 
-/* List Styling */
-ul {
-    list-style-type: disc;
-    padding-left: 40px;
-    text-align: left;
-}
-
-li {
-    color: white;
-    margin: 10px 0;
-    line-height: 1.5;
-}
-
-/* Intro Card Styling */
+/* Intro Card */
 .intro-card {
     background-color: #011b12;
     color: white;
@@ -201,10 +146,99 @@ li {
     transform: translateY(-5px);
 }
 
-.intro-card h2 {
+.heading {
     color: #c8ffb2;
     margin-top: 15px;
 }
+
+/* Intro Figure */
+.intro-figure {
+    margin-bottom: 20px;
+}
+
+.intro-figure img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #c8ffb2;
+    box-sizing: border-box; 
+}
+
+/* Caption */
+.intro-figure figcaption {
+    color: #c8c8c8;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* List Styling */
+ul {
+    list-style-type: disc;
+    padding-left: 40px;
+    text-align: left;
+}
+
+li {
+    color: white;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+/* Nested List */
+.nested-list {
+    list-style-type: circle;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+/*CLient project overview styles*/
+.project-card{
+    background-color: #011b12;
+    color: white;
+    border-radius: 30px;
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+h4 {
+    margin-left: 100px
+}
+
+h5 {
+    margin-left: 115px;
+}
+
+.project-card ul {
+    margin-left: 100px;
+}
+
+.project-card figure {
+    margin-left: 115px;
+}
+
+.wireframe img {
+    border-radius: 0;
+}
+
+.wireframe figcaption {
+   text-align: center;
+}
+
+.dynamic-function a {
+    color: yellow;
+    text-decoration: none;
+}
+
+.dynamic-function a:hover {
+    color: white
+}
+
 
 /* Responsive Design */
 @media (max-width: 1200px) {
@@ -219,16 +253,11 @@ li {
     }
 
     main {
-        width: 100%; 
+        width: 100%;
     }
 
     p {
         max-width: 90%;
-    }
-
-    img {
-        width: 120px;
-        height: 120px;
     }
 
     .card {
@@ -241,13 +270,12 @@ li {
         max-width: 90%;
     }
 
-    img {
-        width: 100px;
-        height: 100px;
-    }
-
     .card {
         width: 95%;
-        padding: 15px;
+    }
+
+    .intro-figure img {
+        width: 100px;
+        height: 100px;
     }
 }
