@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  /*Header Styling*/
+  header {
+    background-color: #f5dddd;
+  position: fixed;
+  width: 100%;       /* force header to span full width */
+  top: 0;            /* ensure it stays at the top */
+  left: 0;           /* align to the left edge */
+  z-index: 1000;  
+  }
+
+  h1 {
+    color: 	#678ac2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 55px; 
+    justify-content: center; 
+    margin-top: 15px;
+  }
+  
+
+  a {
+    font-family: 'Raleway', sans-serif;
+    color: #678ac2; 
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white;
+  }
+
+  body {
+    background-color:  #ecbbbd;
+  }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+ body p {
+   text-align: center;
+ }
+
+ 
+ .welcome-card {
+    background-color: #678ac2;
+    width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-top: 6em;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(233, 126, 126, 0.4);
+    transition: transform 0.3s ease;
+
+ }
+
+ .welcome-card:hover{
+    transform: translateY(-5px);
+ }
+
+ .welcome-card h2  {
+    color: white;
+    margin-bottom: 50px;
+ }
+
+ .welcome-card p {
+    color: white;
+
+ }
+
+ .first-product {
+    background-color: #678ac2;
+    width: 500px;
+    margin: 3em auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(233, 126, 126, 0.4);
+    transition: transform 0.3s ease;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: white;
+  }
+  
+  .first-product:hover {
+    transform: translateY(-5px);
+  }
+  
+  .first-product figure {
+    margin: 0;
+    text-align: center;
+  }
+  
+  .first-product img {
+    width: 80%; 
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .first-product figure figcaption {
+    font-size: 1.2em;
+  }
+
+  footer {
+    background-color: #f5dddd;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
