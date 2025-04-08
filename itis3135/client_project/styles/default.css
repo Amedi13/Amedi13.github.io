@@ -1,134 +1,317 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-  }
-  
-  /*Header Styling*/
-  header {
-    background-color: #f5dddd;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body {
+  background-color: #ecbbbd;
+  font-family: 'Raleway', sans-serif;
+}
+
+header {
+  background-color: #f5dddd;
   position: fixed;
-  width: 100%;       /* force header to span full width */
-  top: 0;            /* ensure it stays at the top */
-  left: 0;           /* align to the left edge */
-  z-index: 1000;  
-  }
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
 
-  h1 {
-    color: 	#678ac2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Raleway', sans-serif;
-  }
+h1 {
+  color: #678ac2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+}
 
-  .nav-links {
-    display: flex;
-    gap: 55px; 
-    justify-content: center; 
-    margin-top: 15px;
-  }
+.nav-links {
+  display: flex;
+  gap: 55px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+a {
+  font-family: 'Raleway', sans-serif;
+  color: #678ac2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  color: #678ac2;
+}
+
+body p {
+  text-align: center;
+}
+
+
+.welcome-card {
+  background-color: #678ac2;
+  width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: 10em;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(233, 126, 126, 0.4);
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+}
+
+.welcome-card:hover {
+  transform: translateY(-5px);
+}
+
+.welcome-card p {
+  color: white;
+}
+
+.first-product {
+  background-color: #678ac2;
+  width: 500px;
+  margin: 3em auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(233, 126, 126, 0.4);
+  transition: transform 0.3s ease;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.first-product:hover {
+  transform: translateY(-5px);
+}
+
+.first-product figure {
+  margin: 0;
+  text-align: center;
+}
+
+.first-product img {
+  margin: 0 auto;
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.first-product figure figcaption {
+  font-size: 1.2em;
+}
+
+footer {
+  margin-top: auto;
+  color: #678ac2;
+  background-color: #f5dddd;
+  padding: 10px;
+  text-align: center;
+}
+
+/*Menu Page*/
+.flavors-card {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 20px;
+  margin-top: 10rem;
+  background-color: #678ac2;
+  max-width: 400px;
+}
+
+ul {
+  color: white;
+}
+
+.menu-items {
+  margin-top: 7rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #678ac2;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(233, 126, 126, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1rem;
+  width: 250px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+figure:hover {
+  transform: translateY(-5px);
+}
+
+figure img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+figure figcaption {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.order-form {
+  margin-top: 10rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  background-color: #fceeee;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(233, 126, 126, 0.3);
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+}
+
+.order-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.order-form button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #678ac2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.order-form button:hover {
+  background-color: #4e6fa0;
+}
+
+.gallery {
+  padding: 4rem 2rem;
+  background-color: #fffaf3;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+.gallery-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery-section figure {
   
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(233, 126, 126, 0.3);
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+}
 
-  a {
-    font-family: 'Raleway', sans-serif;
-    color: #678ac2; 
-    text-decoration: none;
-  }
+.gallery-section figure:hover {
+  transform: translateY(-5px);
+}
 
-  a:hover {
-    color: white;
-  }
+.gallery-section img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
 
-  body {
-    background-color:  #ecbbbd;
-  }
+.gallery-section figcaption {
+  margin-top: 0.8rem;
+  font-weight: 500;
+  color: #333;
+}
 
-  h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
-  }
+.faq {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #fffaf3;
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+}
 
- body p {
-   text-align: center;
- }
+.faq-item {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
 
- 
- .welcome-card {
-    background-color: #678ac2;
-    width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    margin-top: 6em;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(233, 126, 126, 0.4);
-    transition: transform 0.3s ease;
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: left;
+  padding: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
 
- }
+.faq-question:hover {
+  background-color: #fceeee;
+}
 
- .welcome-card:hover{
-    transform: translateY(-5px);
- }
-
- .welcome-card h2  {
-    color: white;
-    margin-bottom: 50px;
- }
-
- .welcome-card p {
-    color: white;
-
- }
-
- .first-product {
-    background-color: #678ac2;
-    width: 500px;
-    margin: 3em auto;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(233, 126, 126, 0.4);
-    transition: transform 0.3s ease;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    color: white;
-  }
-  
-  .first-product:hover {
-    transform: translateY(-5px);
-  }
-  
-  .first-product figure {
-    margin: 0;
-    text-align: center;
-  }
-  
-  .first-product img {
-    width: 80%; 
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-  }
-  
-  .first-product figure figcaption {
-    font-size: 1.2em;
-  }
-
-  footer {
-    background-color: #f5dddd;
-    padding: 10px;
-    bottom: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-  
+.faq-answer {
+  padding: 0 1rem 1rem 1rem;
+  display: none;
+  color: #555;
+  font-size: 1rem;
+  box-sizing: border-box;
+}

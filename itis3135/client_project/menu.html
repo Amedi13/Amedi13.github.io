@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Page</title>
-    <link rel="stylesheet" href="styles/default.css">
-    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu Page</title>
+  <link rel="stylesheet" href="styles/default.css" />
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div class="main-wrapper">
     <header>
-        <h1>Welcome To The Menu!</h1>
-        <div data-include="components/header.html"></div>
+      <h1>Welcome To The Menu!</h1>
+      <div data-include="components/header.html"></div>
     </header>
 
     <main>
-        <div class="menu-items">
-            <!--TODO: added menu items-->
-        </div>
+      <div class="flavors-card">
+        <ul>
+          <li>Vanilla</li>
+          <li>Strawberry</li>
+          <li>Chocolate</li>
+        </ul>
+      </div>
+
+      <div class="menu-items">
+        <figure class="menu-card">
+          <img rel="cake" src="/Amedi13.github.io/itis3135/client_project/images/menu-item1.jpg" alt="Birthday Cake">
+          <figcaption>Birthday Cake ~ $29.99</figcaption>
+        </figure>
+
+        <figure class="menu-card">
+          <img rel="cake" src="/Amedi13.github.io/itis3135/client_project/images/menu-item2.jpg" alt="Special Birthday Cake">
+          <figcaption>Special birthday cake ~ $100.00</figcaption>
+        </figure>
+
+        <figure class="menu-card">
+          <img rel="cake" src="/Amedi13.github.io/itis3135/client_project/images/menu-item3.jpg" alt="Cookie Cake">
+          <figcaption>Cookie Cake ~ $29.99</figcaption>
+        </figure>
+
+        <figure class="menu-card">
+          <img rel="cake" src="/Amedi13.github.io/itis3135/client_project/images/menu-item4.jpg" alt="Cupcakes">
+          <figcaption>Cupcakes ~ $24.99</figcaption>
+        </figure>
+      </div>
     </main>
-    <script src="scripts/HTMLInclude.min.js"></script>
+
+    <footer>
+      <div data-include="components/footer.html"></div>
+    </footer>
+  </div>
+  <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
