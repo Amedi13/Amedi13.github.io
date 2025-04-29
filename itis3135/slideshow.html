@@ -9,61 +9,101 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="scripts/slideshow.js" defer></script>
     <style>
-        .slideshow-container {
-            text-align: center;
-            max-width: 800px;
-            margin: auto;
-        }
-        .slide-img {
-            width: 100%;
-            max-height: 500px;
-            object-fit: cover;
-        }
-        .caption {
-            font-size: 1.2em;
-            padding: 10px;
-            background: #eee;
-        }
-        .thumbnails {
-            display: flex;
-            overflow-x: auto;
-            margin-top: 20px;
-            gap: 10px;
-            justify-content: center;
-        }
-        .thumbnails img {
-            height: 80px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .notes-section {
-        background-color: #f8f9fa;
-        border: 1px solid #ddd;
-        border-radius: 12px;
-        padding: 20px 30px;
-        margin: 40px auto;
-        max-width: 800px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+       /* MAIN CONTENT STYLING (does NOT affect header or footer) */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        .notes-section p {
-            font-size: 1rem;
-            color: white;
-            margin: 10px 0;
-        }
+/* Headings */
+ h2 {
+    color:  rgb(3, 70, 3); 
+    margin-bottom: 20px;
+}
 
-        .notes-section .list {
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
+ h3{
+    color:white;
+}
 
-        .notes-section .list li {
-            margin-bottom: 8px;
-            line-height: 1.6;
-            color: white;
-            list-style-type: disc;
-        }
+/* Slideshow styling */
+.slideshow-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.slide-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.caption {
+    font-size: 1.3em;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    color: #333;
+}
+
+/* Thumbnails */
+.thumbnails {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 12px;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.thumbnails img {
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumbnails img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* AI Prompts and Notes Sections */
+.ai-prompts, .notes-section {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 25px 30px;
+    margin-top: 40px;
+}
+
+.ai-prompts p, .notes-section p {
+    font-size: 1rem;
+    color: white;
+    margin: 10px 0;
+}
+
+.ai-prompts ul, .notes-section ul {
+    padding-left: 20px;
+}
+
+.ai-prompts li, .notes-section li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: white;
+    list-style-type: disc;
+}
 
     </style>
 </head>
@@ -76,7 +116,7 @@
     <main>
         <h2>Asael Medina Galvan - Image Slideshow</h2>
         <div class="slideshow-container">
-            <img id="main-image" src="images/airplane.jpg" alt="Airplane" class="slide-img">
+            <img id="main-image" src="images/airplane.jpg" alt="Airplane" class="slide-img" loading="lazy">
             <div class="caption" id="caption">A - for Airplane</div>
         </div>
         <div class="thumbnails" id="thumbnails">
