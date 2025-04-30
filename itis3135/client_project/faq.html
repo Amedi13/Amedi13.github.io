@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Wekcome to The FAQ!</h1>
+        <h1>Welcome to The FAQ!</h1>
         <div data-include="components/header.html"></div>
     </header>
 
@@ -45,5 +45,22 @@
         <div data-include="components/footer.html"></div>
     </footer>
     <script src="scripts/HTMLInclude.min.js"></script>
+
+    <script>
+      // Wait for the page to fully load
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqQuestions = document.querySelectorAll(".faq-question");
+    
+        faqQuestions.forEach((button) => {
+          button.addEventListener("click", () => {
+            const answer = button.nextElementSibling;
+    
+            // Toggle visibility
+            answer.style.display = (answer.style.display === "block") ? "none" : "block";
+          });
+        });
+      });
+    </script>
+    
 </body>
 </html>

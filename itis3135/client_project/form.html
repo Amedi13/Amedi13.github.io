@@ -1,54 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submit an Order</title>
-    <link rel="stylesheet" href="styles/default.css">
-    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit an Order</title>
+  <link rel="stylesheet" href="styles/default.css" />
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <h1>Submit an Order!</h1>
-        <div data-include="components/header.html"></div>
-    </header>
+  <header>
+    <h1>Submit an Order!</h1>
+    <div data-include="components/header.html"></div>
+  </header>
 
-    <main>
-        <section class="order-form">
-            <h2>Place Your Order</h2>
-            <form action="submit-order.php" method="POST">
-              <label for="name">Full Name:</label>
-              <input type="text" id="name" name="name" required>
-          
-              <label for="email">Email Address:</label>
-              <input type="email" id="email" name="email" required>
-          
-              <label for="phone">Phone Number:</label>
-              <input type="tel" id="phone" name="phone" required>
-          
-              <label for="product">Select a Product:</label>
-              <select id="product" name="product" required>
-                <option value="">-- Please choose an item --</option>
-                <option value="birthday-cake">Birthday Cake</option>
-                <option value="cookie-cake">Cookie Cake</option>
-                <option value="cupcakes">Cupcakes</option>
-                <option value="custom">Custom Order</option>
-              </select>
-          
-              <label for="quantity">Quantity:</label>
-              <input type="number" id="quantity" name="quantity" min="1" required>
-          
-              <label for="notes">Special Instructions:</label>
-              <textarea id="notes" name="notes" rows="4" placeholder="e.g. Allergies, design ideas..."></textarea>
-          
-              <button type="submit">Submit Order</button>
-            </form>
-          </section>
-          
-    </main>
-    <footer>
-        <div data-include="components/footer.html"></div>
-    </footer>
-    <script src="scripts/HTMLInclude.min.js"></script>
+  <main>
+    <section class="order-form">
+      <h2>Place Your Order</h2>
+      <form id="orderForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="product">Select a Product:</label>
+        <select id="product" name="product" required>
+          <option value="">-- Please choose an item --</option>
+          <option value="birthday-cake">Birthday Cake</option>
+          <option value="cookie-cake">Cookie Cake</option>
+          <option value="cupcakes">Cupcakes</option>
+          <option value="custom">Custom Order</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+
+        <label for="notes">Special Instructions:</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="e.g. Allergies, design ideas..."></textarea>
+
+        <button type="submit">Submit Order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div data-include="components/footer.html"></div>
+  </footer>
+
+  <!-- EmailJS integration -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+
+    emailjs.init("F8LX_k1hxmHosDP4n");
+
+    document.getElementById("orderForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      emailjs.sendForm("service_ijoniep", "template_l4cd5a7", this)
+        .then(function () {
+          alert("Order submitted and email sent successfully!");
+          document.getElementById("orderForm").reset();
+        }, function (error) {
+          alert("Failed to send email. Error: " + JSON.stringify(error));
+        });
+    });
+  </script>
+
+  <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
