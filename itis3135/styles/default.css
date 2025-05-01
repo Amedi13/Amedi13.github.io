@@ -239,6 +239,86 @@ h5 {
     color: white
 }
 
+/* === Peer Review Enhancements === */
+.review-title {
+    color: #c8ffb2;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.review-figure {
+    max-width: 700px;
+    margin: 30px auto;
+    text-align: center;
+    background-color: #011b12;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.review-figure img {
+    border-radius: 10px;
+    border: 2px solid #c8ffb2;
+}
+
+.review-figure figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 14px;
+    color: #c8c8c8;
+}
+/* === Peer Review Section Styling === */
+
+ .heading-three{
+    background-color: #022e1c;
+    color: #c8ffb2;
+    padding: 10px 20px;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: 30px auto 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.review-section ul {
+    background-color: #011b12;
+    border-radius: 15px;
+    padding: 20px 30px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    list-style-type: none;
+}
+
+.review-section ul li {
+    margin: 10px 0;
+    color: #f0f0f0;
+    font-size: 16px;
+    padding-left: 1.2em;
+    position: relative;
+}
+
+.review-section ul li::before {
+    content: '•';
+    color: #c8ffb2;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.review-section p {
+    background-color: #011b12;
+    color: white;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    border-radius: 15px;
+    font-size: 15px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 1200px) {

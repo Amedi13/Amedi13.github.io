@@ -83,6 +83,14 @@ body p {
   color: white;
 }
 
+.first-product h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 .first-product {
   background-color: #678ac2;
   width: 500px;
@@ -90,7 +98,8 @@ body p {
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(233, 126, 126, 0.4);
   transition: transform 0.3s ease;
-  height: 450px;
+  height: auto;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,14 +138,38 @@ footer {
 }
 
 /*Menu Page*/
+/* Enhanced Flavors Card Styling */
 .flavors-card {
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  border-radius: 20px;
-  margin-top: 10rem;
   background-color: #678ac2;
-  max-width: 400px;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(233, 126, 126, 0.3);
+  padding: 2rem 2.5rem;
+  max-width: 350px;
+  margin: 8rem auto 3rem auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flavors-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.flavors-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flavors-card li {
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.flavors-card li:last-child {
+  border-bottom: none;
 }
 
 ul {
@@ -314,4 +347,33 @@ figure figcaption {
   color: #555;
   font-size: 1rem;
   box-sizing: border-box;
+}
+
+.heading-two{
+  color: white;
+}
+
+.welcome-card,
+.first-product {
+  width: 90%;
+  max-width: 800px;
+}
+
+
+.menu-items {
+  flex-wrap: wrap;
+}
+
+
+.tagline {
+  text-align: center;
+  color: #678ac2;
+  font-size: 1.1rem;
+  margin-top: -10px;
+  font-style: italic;
+}
+
+
+.welcome-card {
+  background: linear-gradient(to bottom right, #678ac2, #7aa8e0);
 }

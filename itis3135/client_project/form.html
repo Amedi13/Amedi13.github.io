@@ -49,26 +49,7 @@
   <footer>
     <div data-include="components/footer.html"></div>
   </footer>
-
-  <!-- EmailJS integration -->
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-
-    emailjs.init("F8LX_k1hxmHosDP4n");
-
-    document.getElementById("orderForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      emailjs.sendForm("service_ijoniep", "template_l4cd5a7", this)
-        .then(function () {
-          alert("Order submitted and email sent successfully!");
-          document.getElementById("orderForm").reset();
-        }, function (error) {
-          alert("Failed to send email. Error: " + JSON.stringify(error));
-        });
-    });
-  </script>
-
+  <script src="scripts/script.js"></script>
   <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
