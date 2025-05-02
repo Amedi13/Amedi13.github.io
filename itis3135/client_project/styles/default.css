@@ -238,6 +238,13 @@ figure figcaption {
   font-weight: bold;
 }
 
+#char-count {
+  font-size: 0.9em;
+  margin-top: 5px;
+  color: #555;
+}
+
+
 .order-form input,
 .order-form select,
 .order-form textarea {
