@@ -1,9 +1,15 @@
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
+main {
+  flex: 1;
+}
+
 
 .main-wrapper {
   display: flex;
@@ -282,6 +288,7 @@ figure figcaption {
   text-align: center;
 }
 
+/* Gallery Section */
 .gallery-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -316,6 +323,11 @@ figure figcaption {
   color: #333;
 }
 
+.gallery-page main {
+  min-height: 500px;
+}
+
+/* FAQ Page */
 .faq {
   max-width: 800px;
   margin: 4rem auto;
