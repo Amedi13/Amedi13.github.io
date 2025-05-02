@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asael Medina - Personal Site</title>
+  <link rel="stylesheet" href="styles/default.css">
+</head>
+<body>
+  <header>
+    <h1>Asael Medina</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello! I'm Asael Medina, a Computer Science student at UNC Charlotte passionate about full-stack development, design, and building useful applications. I'm currently enhancing my portfolio with projects in Java, React, Spring Boot, and more.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <a href="https://github.com/Amedi13" target="_blank">GitHub</a>
+      <ul>
+        <li><strong>Task Manager App:</strong> A full-stack app using Spring Boot and React to manage development tasks.</li>
+        <li><strong>Library Tracker GUI:</strong> A Java Swing desktop application to manage personal books.</li>
+        <li><strong>HuddleEd:</strong> A Django web app helping UNCC students find study partners.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+      <p id="formResponse"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Asael Medina. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
